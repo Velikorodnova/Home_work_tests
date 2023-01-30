@@ -8,6 +8,7 @@ class UserTestsTest {
 
     User user = new User("marina_v", "mar@com.ru");
     User user1 = new User("lena_k", "lena@com.ru");
+    User user2 = new User("svetlana_v", "svetlanacomru");
 
     @Test
     @DisplayName("Construction object creation User")
@@ -30,10 +31,8 @@ class UserTestsTest {
     @Test
     @DisplayName("Correct Email address in the email field in the User class")
     void correctEmail() {
-        boolean userCorrect = false;
-        if (!user.getEmail().contains("@") || !user.getEmail().contains(".")) {
-            Assertions.assertFalse(userCorrect);
-        }
+        Assertions.assertFalse(user2.getEmail().contains("."));
+        Assertions.assertFalse(user2.getEmail().contains("@"));
     }
 
     @Test
